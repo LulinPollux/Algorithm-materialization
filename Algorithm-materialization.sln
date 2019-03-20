@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorithm-materialization", "Algorithm-materialization\Algorithm-materialization.vcxproj", "{74E8E996-A96F-456B-A06A-2A6A231406BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2장", "2장\2장.vcxproj", "{67D702AE-0A12-43D4-9E65-66DB40BA835A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Debug|x64.ActiveCfg = Debug|x64
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Debug|x64.Build.0 = Debug|x64
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Debug|x86.ActiveCfg = Debug|Win32
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Debug|x86.Build.0 = Debug|Win32
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Release|x64.ActiveCfg = Release|x64
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Release|x64.Build.0 = Release|x64
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Release|x86.ActiveCfg = Release|Win32
-		{74E8E996-A96F-456B-A06A-2A6A231406BE}.Release|x86.Build.0 = Release|Win32
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Debug|x64.ActiveCfg = Debug|x64
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Debug|x64.Build.0 = Debug|x64
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Debug|x86.ActiveCfg = Debug|Win32
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Debug|x86.Build.0 = Debug|Win32
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Release|x64.ActiveCfg = Release|x64
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Release|x64.Build.0 = Release|x64
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Release|x86.ActiveCfg = Release|Win32
+		{67D702AE-0A12-43D4-9E65-66DB40BA835A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
