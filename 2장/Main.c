@@ -37,10 +37,10 @@ int greatestCommonFactor(int a, int b, int *result)
 }
 
 //최대 숫자를 찾는 함수
-int maxNumber(int data[10])
+int maxNumber(int data[], int count)
 {
 	int max = data[0];
-	for (int i = 1; i <= 9; i++)
+	for (int i = 1; i <= (count - 1); i++)
 	{
 		if (data[i] > max)
 			max = data[i];
@@ -74,7 +74,7 @@ int main()
 	printf("최대 숫자 찾기: 25 10 20 35 55 45 60 79 90 3 \n");
 	int data[10] = { 25, 10, 20, 35, 55, 45, 60, 79, 90, 3 };
 
-	retval = maxNumber(data);
+	retval = maxNumber(data, 10);
 	printf("결과: %d\n", retval);
 
 	return 0;
