@@ -4,21 +4,9 @@
 //최대공약수를 계산하는 함수
 int greatestCommonFactor(int a, int b, int *result)
 {
-	/*
-	1. 오류제어 a >= b >= 0
+	//오류제어 a >= b >= 0
 	if (!((a >= b) && (b >= 0)))
 		return 1;
-	*/
-
-	//2. 오류제어, 자동으로 큰 수의 위치변경
-	if ((a < 0) || (b < 0))
-		return 1;
-	else if (a < b)
-	{
-		int temp = a;
-		a = b;
-		b = temp;
-	}
 
 	while (1)
 	{
