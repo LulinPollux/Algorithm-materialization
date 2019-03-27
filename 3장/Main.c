@@ -34,20 +34,23 @@ int random(int *output, int count, int range)
 //선택 정렬을 수행하는 함수
 int selectSort(int *data, int count)
 {
-	int index = 0;
-	int min;
-
 	for (int i = 0; i < count; i++)
 	{
-		min = 9999;
+		//필요한 변수를 생성한다.
+		int minValue = data[i];	//최솟값을 저장
+		int index = i;		//배열에서 최솟값이 있는 위치의 인덱스를 저장
+
 		for (int j = i; j < count; j++)
 		{
-			if (min > data[j])
+			//저정된 최솟값보다 더 작은 수가 있다면 그 수로 덮어쓴다.
+			if (minValue > data[j])
 			{
-				min = data[j];
+				minValue = data[j];
 				index = j;
 			}
 		}
+
+		//index에 기록된 위치의 최솟값을 앞쪽으로 이동한다.
 		int temp = data[i];
 		data[i] = data[index];
 		data[index] = temp;
