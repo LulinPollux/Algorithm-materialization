@@ -3,17 +3,17 @@
 #include <time.h>
 
 //난수를 생성하는 함수 (0 ~ range-1)
-int random(int *output, int count, int range)
+int random(int output[], int amount, int range)
 {
 	//오류제어: 범위보다 난수 개수가 더 많으면 중단함.
-	if (count > range)
+	if (amount > range)
 		return 1;
 
 	//불규칙 난수 생성 활성화
 	srand((unsigned int)time(NULL));
 
 	//난수를 생성한다.
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < amount; i++)
 	{
 		output[i] = rand() % range;
 
@@ -32,15 +32,15 @@ int random(int *output, int count, int range)
 }
 
 //선택 정렬을 수행하는 함수
-int selectSort(int *data, int count)
+int selectSort(int data[], int amount)
 {
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < amount; i++)
 	{
 		//필요한 변수를 생성한다.
 		int minValue = data[i];	//최솟값을 저장
 		int index = i;		//배열에서 최솟값이 있는 위치의 인덱스를 저장
 
-		for (int j = i; j < count; j++)
+		for (int j = i; j < amount; j++)
 		{
 			//저정된 최솟값보다 더 작은 수가 있다면 그 수로 덮어쓴다.
 			if (minValue > data[j])

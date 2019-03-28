@@ -25,10 +25,10 @@ int greatestCommonFactor(int a, int b, int *result)
 }
 
 //최대 숫자를 찾는 함수
-int maxNumber(int data[], int count)
+int maxNumber(int data[], int amount)
 {
 	int max = data[0];
-	for (int i = 1; i <= (count - 1); i++)
+	for (int i = 1; i <= (amount - 1); i++)
 	{
 		if (data[i] > max)
 			max = data[i];
