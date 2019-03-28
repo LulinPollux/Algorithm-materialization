@@ -3,7 +3,7 @@
 #include <time.h>
 
 //난수를 생성하는 함수 (0 ~ range-1)
-int random(int output[], int amount, int range)
+int random(_Inout_ int output[], int amount, int range)
 {
 	//오류제어: 범위보다 난수 개수가 더 많으면 중단함.
 	if (amount > range)
