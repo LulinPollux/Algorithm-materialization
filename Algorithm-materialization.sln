@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2장", "2장\2장.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3장", "3장\3장.vcxproj", "{EECB5FC8-28B8-4F93-B7A0-09C8AF67A6A1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "4장", "4장\4장.vcxproj", "{227C99DF-3603-45A9-9CFF-341B4E644FE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{EECB5FC8-28B8-4F93-B7A0-09C8AF67A6A1}.Release|x64.Build.0 = Release|x64
 		{EECB5FC8-28B8-4F93-B7A0-09C8AF67A6A1}.Release|x86.ActiveCfg = Release|Win32
 		{EECB5FC8-28B8-4F93-B7A0-09C8AF67A6A1}.Release|x86.Build.0 = Release|Win32
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Debug|x64.ActiveCfg = Debug|x64
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Debug|x64.Build.0 = Debug|x64
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Debug|x86.ActiveCfg = Debug|Win32
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Debug|x86.Build.0 = Debug|Win32
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Release|x64.ActiveCfg = Release|x64
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Release|x64.Build.0 = Release|x64
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Release|x86.ActiveCfg = Release|Win32
+		{227C99DF-3603-45A9-9CFF-341B4E644FE9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
