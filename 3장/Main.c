@@ -31,23 +31,25 @@ int random(int output[], int amount, int range)
 	return 0;
 }
 
-int mergeSort(int subData1[], int subData2[], int amount, int result[])
+int mergeSort2(int data[], int startIndex, int endIndex, int result[])
 {
-	int index = 0;	//결과 배열의 인덱스를 저장한다.
-	int i, k;	//2개의 입력 배열에 사용하는 인덱스이다.
+	//필요한 변수를 선언한다.
+	int half = (startIndex + endIndex) / 2;	//인덱스의 중간을 저장한다.
+	int index = 0;			//결과 배열의 인덱스를 저장한다.
+	int i, k;			//입력 배열에 사용하는 인덱스이다.
 
-	for (i = 0, k = 0; (i < amount) && (k < amount); index++)
+	for (i = startIndex, k = half + 1; (i <= half) && (k <= endIndex); index++)
 	{
 		//1번 배열의 수가 2번 배열의 수보다 작으면 결과배열에 넣고 i++
 		//2번 배열의 수가 1번 배열의 수보다 작으면 결과배열에 넣고 k++
-		if (subData1[i] < subData2[k])
+		if (data[i] < data[k])
 		{
-			result[index] = subData1[i];
+			result[index] = data[i];
 			i++;
 		}
-		else if (subData2[k] < subData1[i])
+		else if (data[k] < data[i])
 		{
-			result[index] = subData2[k];
+			result[index] = data[k];
 			k++;
 		}
 		else
@@ -58,11 +60,10 @@ int mergeSort(int subData1[], int subData2[], int amount, int result[])
 	}
 
 	//마지막 1개는 비교가 불가능하므로 그 수는 따로 결과 배열에 넣어준다.
-	//찾는 방법: i 또는 k가 amount - 1과 같은지를 검사하여 같으면 그 수이므로 따로 넣어준다.
-	if (i == amount - 1)
-		result[index] = subData1[i];
+	if (i == half)
+		result[index] = data[i];
 	else
-		result[index] = subData2[k];
+		result[index] = data[k];
 
 	return 0;
 }
@@ -98,6 +99,21 @@ int selectSort(int data[], int amount)
 int main()
 {
 	int retval;
+
+	int data1[8] = { 10, 22, 30, 37, 13, 24, 25, 35 };
+	int result[8] = { 0 };
+	retval = mergeSort2(data1, 0, 7, result);
+	if (retval != 0)
+		return 1;
+
+	printf("결과: ");
+	for (int i = 0; i < (sizeof(result) / sizeof(int)); i++)
+	{
+		printf("%d ", result[i]);
+	}
+	printf("\n\n");
+
+
 
 	//난수를 생성한다.
 	int data[100] = { 0 };
