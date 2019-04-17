@@ -142,23 +142,38 @@ int main()
 {
 	int retval;
 
+	//난수를 생성한다.
+	int data[8] = { 0 };
+	retval = random(data, sizeof(data) / sizeof(int), 40);
+	if (retval != 0)
+	{
+		printf("오류 발생: %d\n", retval);
+		return 1;
+	}
+
+	//데이터를 출력한다.
+	printf("데이터: ");
+	for (int i = 0; i < (sizeof(data) / sizeof(int)); i++)
+	{
+		printf("%d ", data[i]);
+	}
+	printf("\n\n");
+
 	//합병 정렬을 한다.
-	int data1[8] = { 37, 10, 22, 30, 35, 13, 25, 24 };
-	retval = mergeSort(data1, 8);
+	retval = mergeSort(data, 8);
 	if (retval != 0)
 		return 1;
 
 	//결과를 출력한다.
 	printf("결과: ");
-	for (int i = 0; i < (sizeof(data1) / sizeof(int)); i++)
+	for (int i = 0; i < (sizeof(data) / sizeof(int)); i++)
 	{
-		printf("%d ", data1[i]);
+		printf("%d ", data[i]);
 	}
 	printf("\n\n");
 	//----------------------------------------------------------------
 
 	//난수를 생성한다.
-	int data[100] = { 0 };
 	retval = random(data, sizeof(data) / sizeof(int), 100);
 	if (retval != 0)
 	{
