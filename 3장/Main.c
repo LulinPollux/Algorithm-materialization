@@ -31,12 +31,14 @@ int random(int output[], int amount, int range)
 	return 0;
 }
 
-int mergeSort2(int data[], int startIndex, int endIndex, int result[])
+//합병 정렬의 부분문제를 해결하는 함수
+int mergeSort2(int data[], int startIndex, int endIndex)
 {
 	//필요한 변수를 선언한다.
-	int half = (startIndex + endIndex) / 2;	//인덱스의 중간을 저장한다.
-	int index = 0;			//결과 배열의 인덱스를 저장한다.
-	int i, k;			//입력 배열에 사용하는 인덱스이다.
+	int result[100] = { 0 };	//결과값을 저장하는 배열
+	int index = 0;			//결과 배열의 인덱스를 저장
+	int i, k;			//입력 배열에 사용하는 인덱스
+	int half = (startIndex + endIndex) / 2;	//인덱스의 중간값을 저장
 
 	for (i = startIndex, k = half + 1; (i <= half) && (k <= endIndex); index++)
 	{
@@ -64,6 +66,46 @@ int mergeSort2(int data[], int startIndex, int endIndex, int result[])
 		result[index] = data[i];
 	else
 		result[index] = data[k];
+
+	//입력 배열에 결과값을 복사한다.
+	for (i = startIndex, k = 0; i <= endIndex; i++, k++)
+	{
+		data[i] = result[k];
+	}
+
+	return 0;
+}
+
+//합병 정렬을 수행하는 함수
+int mergeSort(int data[], int amount)
+{
+	int retval;
+	
+	//오류제어
+	//amount가 짝수가 아니면 중단한다.
+	if (amount % 2 != 0)
+		return 1;
+
+	for (int i = 0; i < amount; i += 2)
+	{
+		retval = mergeSort2(data, i, i + 1);
+		if (retval != 0)
+			return 1;
+	}
+
+	for (int i = 0; i < amount; i += 4)
+	{
+		retval = mergeSort2(data, i, i + 3);
+		if (retval != 0)
+			return 1;
+	}
+
+	for (int i = 0; i < amount; i += 8)
+	{
+		retval = mergeSort2(data, i, i + 7);
+		if (retval != 0)
+			return 1;
+	}
 
 	return 0;
 }
@@ -100,20 +142,20 @@ int main()
 {
 	int retval;
 
-	int data1[8] = { 10, 22, 30, 37, 13, 24, 25, 35 };
-	int result[8] = { 0 };
-	retval = mergeSort2(data1, 0, 7, result);
+	//합병 정렬을 한다.
+	int data1[8] = { 37, 10, 22, 30, 35, 13, 25, 24 };
+	retval = mergeSort(data1, 8);
 	if (retval != 0)
 		return 1;
 
+	//결과를 출력한다.
 	printf("결과: ");
-	for (int i = 0; i < (sizeof(result) / sizeof(int)); i++)
+	for (int i = 0; i < (sizeof(data1) / sizeof(int)); i++)
 	{
-		printf("%d ", result[i]);
+		printf("%d ", data1[i]);
 	}
 	printf("\n\n");
-
-
+	//----------------------------------------------------------------
 
 	//난수를 생성한다.
 	int data[100] = { 0 };
