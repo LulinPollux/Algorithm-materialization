@@ -122,7 +122,7 @@ int selectSort(int data[], int amount)
 		for (int j = i; j < amount; j++)
 		{
 			//저정된 최솟값보다 더 작은 수가 있다면 그 수로 덮어쓴다.
-			if (minValue > data[j])
+			if (data[j] < minValue)
 			{
 				minValue = data[j];
 				index = j;
@@ -162,7 +162,10 @@ int main()
 	//합병 정렬을 한다.
 	retval = mergeSort(data, 8);
 	if (retval != 0)
+	{
+		printf("오류 발생: %d\n", retval);
 		return 1;
+	}
 
 	//결과를 출력한다.
 	printf("결과: ");
